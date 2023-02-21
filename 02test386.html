@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>String 객체</title>
+    <style>
+        * {
+            font-size: 20pt;
+        }
+    </style>
+    <script>
+        var info = '', msg = '', result = '';
+
+        var str = 'lgYc CITY kim HI'
+        document.write(str.toLowerCase(1), '<br>');
+        document.write(str.toUpperCase(1), '<br>');
+
+        var msg='서울 구로구 서울 하이미디어 서울화이팅';
+        document.write(msg.replace('서울', 'seoul'), '<br>');
+        document.write(msg.replaceAll('서울', 'seoul'), '<br>');
+        document.write(msg.replace('구', '신'), '<br>');
+
+        var jumin = '890729-2065913';
+        var gender = jumin.charAt(7);
+        // if(gender=='2'){info='여자입니다';}
+        // else if(gender=='1'){info='남자입니다';}
+        // else{document.write('에러입니다')}
+        // document.write(info, '<br>');
+
+        // document.write('당신의 생일은 ' + jumin.substr(2,2)+ '월 ' +jumin.substr(4,2)+'일입니다');
+        document.write('당신의 생일은 ' + jumin.substring(2, 4) + '월 ' + jumin.substring(4, 6) + '일입니다');
+
+        var a= jumin.substr(2,2);
+        var b=jumin.substr(4,2);
+        document.write('당신의 생일은', a, '월', b, '일입니다<br>' );
+
+        var a= jumin.substring(2,4);
+        var b=jumin.substring(4,6);
+        document.write('당신의 생일은', a, '월', b, '일입니다<br>' );
+
+        var jumin1 = '890729';
+        var jumin2 = '2065913';
+        // document.write(jumin1.concat(jumin2));
+        var size1 = 0, size2 = 0, size3 = 0;
+        size1 = jumin1.length;
+        size2 = jumin2.length;
+        
+        if (size1 != 6) {
+            info = '6자릿수여야 합니다';
+            document.write(info, '<br>');
+        }
+        if (size2 != 7) {
+            info = '7자릿수여야 합니다'
+            document.write(info, '<br>');
+        }
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

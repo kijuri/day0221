@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01testpizza.html</title>
+    <style>
+        #field {
+            width: 500px;
+            margin: auto;
+            border-radius: 30px;
+        }
+
+		.relative {
+			position: relative;
+			width: 700px;
+			height: 700px;
+			background-image: url('images/pizza11.jpg');
+			background-position: left;
+		}
+
+		.absolute {
+			position: absolute;
+			right: 0;
+			width: 350px;
+			height: 700px;
+			background-image: url('images/pizza11.jpg');
+			background-position: right;
+		}
+
+    </style>
+    <script>
+        function changePizzaL(name) {
+            // alert(name + '왼쪽 항목 메뉴입니다');
+            var filename = "url('images/" + name + ".jpg')";
+            preview_l.style.backgroundImage = filename; //성공
+        }
+
+        function changePizzaR(name) {
+            // alert(name + '오른쪽 항목 메뉴입니다');
+            var filename = "url('images/" + name + ".jpg')";
+            preview_r.style.backgroundImage = filename; //성공
+        }
+
+    </script>
+</head>
+
+<body>
+    <div id="background">
+        <fieldset id="field">
+            <legend> <b>
+                    <img src="./images/도미노.PNG">&nbsp;
+                </b></legend>
+            <form action="">
+                고객명: &nbsp;&nbsp;&nbsp;<input type="text" size="26" autofocus>
+                <p></p>
+                전화번호: <input type="tel" value="010-" maxlength="13" size="26">
+                <p></p>
+                E-mail: &nbsp;&nbsp;&nbsp;<input type="text" size="10">@<select name="E-mail" id="">
+                    <option value="">naver.com</option>
+                    <option value="">daum.net</option>
+                    <option value="">google.com</option>
+                </select>
+                <p></p>
+                <!-- <fieldset>
+                    <legend id="kind">피자 종류</legend>
+                    <div id="preview_l" class="relative">
+                        <div id="preview_r" class="absolute"> </div>
+                    </div>
+                    <div id="pizza1">
+                        <img src="./images/pizza11.jpg" width="230">
+                        <img src="./images/pizza22.jpg" width="230">
+                    </div>
+                    &nbsp;<input type="radio" name="name"> 아보카도
+                    새우&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;<input type="radio" name="name" onchange="changePizzaL(value)"> 크랩&립 하우스<p></p>
+
+                    <div id="pizza2">
+                        <img src="./images/pizza33.jpg" width="230" onchange="changePizzaR(value)">
+                        <img src="./images/pizza44.jpg" width="230">
+                    </div>
+                    &nbsp;<input type="radio" name="name"> 대만 콘 치즈
+                    감자&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    &nbsp;&nbsp;<input type="radio" name="name"> 이탈리아 마르게리따
+
+                </fieldset> -->
+                <div id="preview_l" class="relative">
+                    <div id="preview_r" class="absolute"> </div>
+                </div>
+
+                <form name="myform">
+                    <table border="0" >
+                        <tr>
+                            <td width=80><b>피자A 종류<b></td>
+                            <td width=80><b>피자B 종류</b></td>
+                        </tr>
+                        <tr>
+                            <td width=80>
+                                <select name="pizzaa" onchange="changePizzaL(value)">
+                                    <option value="" > ---피자A를 선택하세요--- </option>
+                                    <option value="pizza11"> 아보카도 새우</option>
+                                    <option value="pizza22"> 크립&립 하우스</option>
+                                </select>
+                            </td>
+                            <td width=80 >
+                                <select name="pizzab" onchange="changePizzaR(value)">
+                                    <option value="" > ---피자B를 선택하세요--- </option>
+                                    <option value="pizza33"> 대만 콘 치즈 감자</option>
+                                    <option value="pizza44"> 이탈리아 마르게리따</option>
+                                </select>
+                            </td>
+
+                        </tr>
+                    </table>
+
+
+                </form>
+                <p></p>
+                <fieldset>
+                    <legend>피자 사이즈</legend>
+                    <input type="radio" name="size"> Small
+                    <input type="radio" name="size"> Medium
+                    <input type="radio" name="size"> Large
+                </fieldset>
+                <p></p>
+                <fieldset>
+                    <legend>토핑선택</legend>
+                    <input type="checkbox">베이컨
+                    <input type="checkbox">치즈
+                    <input type="checkbox">양파
+                    <input type="checkbox">버섯
+                </fieldset>
+                <p></p>
+                희망배송시간: <input type="time" name="" id="">
+                <p></p>
+                배송시요청사항: <textarea name="" id="" cols="66" rows="1"></textarea>
+                <p></p>
+                <input type="button" onclick="check()" id="order" value="주문확인" class="input_button1">
+            </form>
+        </fieldset>
+    </div>
+
+
+
+</body>
+
+</html>
